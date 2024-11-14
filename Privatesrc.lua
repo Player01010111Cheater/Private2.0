@@ -1,6 +1,6 @@
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/Sigmna/refs/heads/main/Souce.lua"))()
 local l = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/dxhooknotify/src.lua", true))()
-local Window = redzlib:MakeWindow({"It's time to win Private version", "", ""})
+local Window = redzlib:MakeWindow({"It's time to win Free version", "", ""})
 Window:AddMinimizeButton({
   Button = { Image = redzlib:GetIcon("Apple"), BackgroundTransparency = 0 },
   Corner = { CornerRadius = UDim.new(0, 6) }
@@ -115,7 +115,7 @@ local FieldOfviewchanger = playersetting:AddSlider({
   Flag = "Slider Teste",
   Min = 70,
   Max = 120,
-  Default = 16,
+  Default = 70,
   Callback = function (fieldofview)
       camerafield.MaxAxisFieldOfView = 155.55
     camerafield.FieldOfView = fieldofview
@@ -123,26 +123,16 @@ local FieldOfviewchanger = playersetting:AddSlider({
 })
 
 
-local valuebuykey = nil
-local Buyoropen = Window:MakeTab({'Buy /Open' , 'database'})
-local buyopensection = Buyoropen:AddSection({"Buy/Open"})
-local buyopenslider = Buyoropen:AddSlider({
-  Name = "Select how much copper key buy ",
-  Flag = "Lllld",
-  Description = "Price : 25k",
-  Min = 0,
-  Max = 10,
-  Default = 0,
-  Callback = function (howmuchbuyvalue)
-    valuebuykey = howmuchbuyvalue
+local walkspeed = playersetting:AddSlider({
+  Name = "Select field of view",
+  Flag = "Slider Teste",
+  Min = 16,
+  Max = 120,
+  Default = 16,
+  Callback = function (field2ofview)
+    player.Character.Humanoid.WalkSpeed = field2ofview
   end
 })
-local buyvaluemuch = Buyoropen:AddButton({"Buy" , function ()
-  for i = 0,valuebuykey do
-    wait(0.1)
-    game:GetService("ReplicatedStorage").Chest.Remotes.Functions.BuyKey:InvokeServer("Copper Key")
-  end
-end})
 local misc = Window:MakeTab({'Misc' , 'database'})
 local sectionmisc = misc:AddSection({'Misc'})
 local reedemallcodes = misc:AddButton({'Redeem all new codes' , function ()
@@ -216,4 +206,10 @@ end})
 local Autoraid = Window:MakeTab({'Auto Raid' , 'Sword'})
 local sectionautoraid = Autoraid:AddSection("Auto Raid")
 local AutoBoss = Window:MakeTab({'Auto Boss' , 'Sword'})
-local sectionaautoboss = Autoraid:AddSection("Auto boss")
+local sectionaautoboss = AutoBoss:AddSection("Auto boss")
+
+
+
+Autoraid:AddButton({"Teleport to raid" , function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4598.44678, 222.365601, -75.3019409, -0.472656518, 0.00902395137, 0.881200552, 0.0046504885, 0.999959171, -0.00774568273, -0.881234527, 0.000436973205, -0.472679228)
+end})
