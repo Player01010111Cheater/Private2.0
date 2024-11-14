@@ -210,6 +210,6 @@ local sectionaautoboss = AutoBoss:AddSection("Auto boss")
 
 
 
-Autoraid:AddButton({"Teleport to raid" , function()
+local djdjdjdjd = Autoraid:AddButton({"Teleport to raid" , function()
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4598.44678, 222.365601, -75.3019409, -0.472656518, 0.00902395137, 0.881200552, 0.0046504885, 0.999959171, -0.00774568273, -0.881234527, 0.000436973205, -0.472679228)
 end})
