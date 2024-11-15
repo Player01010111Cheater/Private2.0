@@ -253,7 +253,7 @@ local espallplayers = esp:AddToggle({
               ImageLabel.BorderSizePixel = 0
               ImageLabel.Position = UDim2.new(0, 30, 0, 10)
               ImageLabel.Size = UDim2.new(0, 35, 0, 35)
-              ImageLabel.Image = "http://www.roblox.com/asset/?id=14915583580"
+              ImageLabel.Image = "rbxassetid://14915583580"
               ImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 0)
               end
               stop3 = false
