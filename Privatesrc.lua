@@ -261,7 +261,7 @@ local espallplayers = esp:AddToggle({
               if stop3 == true then
                 
               else
-                if v.Name == "Torso" then
+                if v.Name == "UpperTorso" then
                   espallfunction(v)
                 end
               end
