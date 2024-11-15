@@ -240,7 +240,6 @@ local espallplayers = esp:AddToggle({
                 local BillboardGui = Instance.new("BillboardGui")
                 local ImageLabel = Instance.new("ImageLabel")
               --Properties:
-               BillboardGui.Parent = game.Workspace["No2ob"].Torso
                BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
                BillboardGui.Active = true
               BillboardGui.AlwaysOnTop = true
