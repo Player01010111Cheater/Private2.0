@@ -1,6 +1,6 @@
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/Sigmna/refs/heads/main/Souce.lua"))()
 local l = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/dxhooknotify/src.lua", true))()
-local Window = redzlib:MakeWindow({"It's time to win Free version", "", ""})
+local Window = redzlib:MakeWindow({"A Star Client | It's time to win", "", ""})
 Window:AddMinimizeButton({
   Button = { Image = redzlib:GetIcon("Apple"), BackgroundTransparency = 0 },
   Corner = { CornerRadius = UDim.new(0, 6) }
@@ -210,6 +210,70 @@ local sectionaautoboss = AutoBoss:AddSection("Auto boss")
 
 
 
-local djdjdjdjd = Autoraid:AddButton({"Teleport to raid" , function()
+local buttonteleport = Autoraid:AddButton({"Teleport to raid" , function()
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4598.44678, 222.365601, -75.3019409, -0.472656518, 0.00902395137, 0.881200552, 0.0046504885, 0.999959171, -0.00774568273, -0.881234527, 0.000436973205, -0.472679228)
 end})
+local ggetdailyrewards = misc:AddButton({"Get daily reward" , function ()
+  local a = "Dont used"
+  if a == "Dont used" then
+    a = "used"
+  game:GetService("ReplicatedStorage").Chest.Remotes.Functions.Reward:InvokeServer()
+  l:Notify("Success" , "" , 3)
+  else
+    l:Notify("Already used" , "" , 3)
+    return
+  end
+end})
+local stop3 = false
+local espallplayers = esp:AddToggle({
+  Name = "Esp all players",
+  Description = "Icon is Star",
+  Default = false,
+  Callback = function (espallplayerss)
+    if espallplayerss == true then
+      for _, v in pairs(folderplayerinworkspace:GetDescendants()) do
+        if v.Name == player.Name then
+          
+          else
+            while wait(1.3) do
+              local function espallfunction()
+                local BillboardGui = Instance.new("BillboardGui")
+                local ImageLabel = Instance.new("ImageLabel")
+              --Properties:
+               BillboardGui.Parent = game.Workspace["No2ob"].Torso
+               BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+               BillboardGui.Active = true
+              BillboardGui.AlwaysOnTop = true
+              BillboardGui.LightInfluence = 1.000
+              BillboardGui.Name = "ESP22"
+              BillboardGui.Size = UDim2.new(0, 100, 0, 50)
+              ImageLabel.Parent = BillboardGui
+              ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+              ImageLabel.BackgroundTransparency = 1.000
+              ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+              ImageLabel.BorderSizePixel = 0
+              ImageLabel.Position = UDim2.new(0, 30, 0, 10)
+              ImageLabel.Size = UDim2.new(0, 35, 0, 35)
+              ImageLabel.Image = "http://www.roblox.com/asset/?id=14915583580"
+              ImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 0)
+              end
+              stop3 = false
+              if stop3 == true then
+                
+              else
+                if v.Name == "Torso" then
+                  espallfunction(v)
+                end
+              end
+            end
+        end
+      end
+    else
+      for _, v in pairs(folderplayerinworkspace:GetDescendants()) do
+        if v.Name == "ESP22" then
+          v:Destroy()
+        end
+      end
+    end
+  end
+})
