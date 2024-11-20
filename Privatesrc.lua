@@ -121,18 +121,6 @@ local FieldOfviewchanger = playersetting:AddSlider({
     camerafield.FieldOfView = fieldofview
   end
 })
-
-
-local walkspeed = playersetting:AddSlider({
-  Name = "Select field of view",
-  Flag = "Slider Teste",
-  Min = 16,
-  Max = 120,
-  Default = 16,
-  Callback = function (field2ofview)
-    player.Character.Humanoid.WalkSpeed = field2ofview
-  end
-})
 local misc = Window:MakeTab({'Misc' , 'database'})
 local sectionmisc = misc:AddSection({'Misc'})
 local reedemallcodes = misc:AddButton({'Redeem all new codes' , function ()
@@ -236,8 +224,8 @@ local espallplayers = esp:AddToggle({
           
           else
             while wait(1.3) do
-              local function espallfunction()
-                local BillboardGui = Instance.new("BillboardGui")
+              local function espallfunction(part3)
+                local BillboardGui = Instance.new("BillboardGui" , part3)
                 local ImageLabel = Instance.new("ImageLabel")
               --Properties:
                BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -253,7 +241,7 @@ local espallplayers = esp:AddToggle({
               ImageLabel.BorderSizePixel = 0
               ImageLabel.Position = UDim2.new(0, 30, 0, 10)
               ImageLabel.Size = UDim2.new(0, 35, 0, 35)
-              ImageLabel.Image = "rbxassetid://14915583580"
+              ImageLabel.Image = "http://www.roblox.com/asset/?id=14915583580"
               ImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 0)
               end
               stop3 = false
@@ -276,3 +264,4 @@ local espallplayers = esp:AddToggle({
     end
   end
 })
+
