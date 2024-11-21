@@ -203,13 +203,14 @@ if game.PlaceId == 4520749081 then
   local buttonteleport = Autoraid:AddButton({"Teleport to raid(Sea 1)" , function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4598.44678, 222.365601, -75.3019409, -0.472656518, 0.00902395137, 0.881200552, 0.0046504885, 0.999959171, -0.00774568273, -0.881234527, 0.000436973205, -0.472679228)
   end})
-else
+elseif game.PlaceId == 6381829480 then
   local buttonteleport = Autoraid:AddButton({"Teleport to raid(Sea 2)" , function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4598.44678, 222.365601, -75.3019409, -0.472656518, 0.00902395137, 0.881200552, 0.0046504885, 0.999959171, -0.00774568273, -0.881234527, 0.000436973205, -0.472679228)
   end})
 end
+-- raid menu = 5931540094
+local a = "Dont used"
 local ggetdailyrewards = misc:AddButton({"Get daily reward" , function ()
-  local a = "Dont used"
   if a == "Dont used" then
     a = "used"
   game:GetService("ReplicatedStorage").Chest.Remotes.Functions.Reward:InvokeServer()
