@@ -116,11 +116,12 @@ local FieldOfviewchanger = playersetting:AddSlider({
   Min = 70,
   Max = 120,
   Default = 70,
+  Callback = function (fieldofview)
+    camerafield.MaxAxisFieldOfView = 155.55
+    camerafield.FieldOfView = fieldofview
+  end
 })
-FieldOfviewchanger.Callback(function (fieldofview)
-  camerafield.MaxAxisFieldOfView = 155.55
-camerafield.FieldOfView = fieldofview
-end)
+
 local misc = Window:MakeTab({'Misc' , 'database'})
 local sectionmisc = misc:AddSection({'Misc'})
 local reedemallcodes = misc:AddButton({'Redeem all new codes' , function ()
