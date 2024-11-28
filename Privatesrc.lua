@@ -85,14 +85,14 @@ local toggleitems = Items:AddToggle({
   Callback = function (toggleitemsget)
     if toggleitemsget == true then
       stop2 = true
-    while wait(0.2) do
+    while wait(0.1) do
       if stop2 == true then
         for _, t in pairs(alldroppedfruitsfolder:GetDescendants()) do
           if t.Name == "Handle" then
             GetlastCFrame = player.Character.HumanoidRootPart.CFrame
             wait(0.01)
             player.Character.HumanoidRootPart.CFrame = t.CFrame
-            wait(1)
+            wait(0.5)
             player.Character.HumanoidRootPart.CFrame = GetlastCFrame
           end
         end
@@ -122,7 +122,7 @@ local FieldOfviewchanger = playersetting:AddSlider({
   end
 })
 
-local misc = Window:MakeTab({'Misc' , 'database'})
+local misc = Window:MakeTab({'Misc' , 'star'})
 local sectionmisc = misc:AddSection({'Misc'})
 local reedemallcodes = misc:AddButton({'Redeem all new codes' , function ()
   wait(0.1)
@@ -216,10 +216,10 @@ local stoptrader = false
 local whatugive = "None"
 local player2 = game.Players.LocalPlayer
 local whatothergiveforu = "None"
-local trader = Window:MakeTab({'Trader(BETA)' , 'Sword'})
+local trader = Window:MakeTab({'Trader(BETA)' , 'backpack'})
 local sectiontrader = trader:AddSection({'Trader'})
 local autoacceptt2rade = trader:AddToggle({
-  Name = "Start auto offer and accept" ,
+  Name = "Start auto offer and accept(only epic and legendary fruits)" ,
   Default = false,
   Callback = function (Shownormtraifdorno)
     while wait(2) do
@@ -311,7 +311,8 @@ local autoacceptt2rade = trader:AddToggle({
               end
           end
       else
-
+        whatothergiveforu = ""
+        whatugive = ""
       end
     end
 end})
@@ -331,4 +332,5 @@ local whatothergive = trader:AddTextBox({
     whatothergiveforu = whatothergive
   end
 })
+
 
