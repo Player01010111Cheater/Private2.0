@@ -1,5 +1,5 @@
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Player01010111Cheater/Sigmna/refs/heads/main/Souce.lua"))()
-local l = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/dxhooknotify/src.lua", true))()
+local ff = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/dxhooknotify/src.lua", true))()
 local Window = redzlib:MakeWindow({"A Star Client | It's time to win", "", ""})
 Window:AddMinimizeButton({
   Button = { Image = redzlib:GetIcon("Apple"), BackgroundTransparency = 0 },
@@ -324,6 +324,7 @@ local needoffer = trader:AddTextBox({
   Description = "Maybe Gas , Gold",
   Callback = function (whatigive)
     whatugive = whatigive
+    paragraphshowfruit:Set("You give: " .. whatugive .. "What other give: " .. whatothergiveforu)
   end
 })
 local whatothergive = trader:AddTextBox({
