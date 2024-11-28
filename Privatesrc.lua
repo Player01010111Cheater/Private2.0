@@ -304,9 +304,7 @@ local autoacceptt2rade = trader:AddToggle({
                                   end
                               end
                           end
-                      else
-                          game:GetService("ReplicatedStorage").Chest.Remotes.Functions.TradeFunction:InvokeServer("RemoveItem",{["ItemName"] = t})
-                          wait(0.5)
+                        else
                           game:GetService("ReplicatedStorage").Chest.Remotes.Functions.TradeFunction:InvokeServer("PutItem",{["ItemName"] = whatugive,["Amt"] = "1",["Add"] = true})
                       end
                   end
