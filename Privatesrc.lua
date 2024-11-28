@@ -116,11 +116,11 @@ local FieldOfviewchanger = playersetting:AddSlider({
   Min = 70,
   Max = 120,
   Default = 70,
-  Callback = function (fieldofview)
-      camerafield.MaxAxisFieldOfView = 155.55
-    camerafield.FieldOfView = fieldofview
-  end
 })
+FieldOfviewchanger.Callback(function (fieldofview)
+  camerafield.MaxAxisFieldOfView = 155.55
+camerafield.FieldOfView = fieldofview
+end)
 local misc = Window:MakeTab({'Misc' , 'database'})
 local sectionmisc = misc:AddSection({'Misc'})
 local reedemallcodes = misc:AddButton({'Redeem all new codes' , function ()
@@ -209,15 +209,130 @@ elseif game.PlaceId == 6381829480 then
   end})
 end
 -- raid menu = 5931540094
-local a = "Dont used"
-local ggetdailyrewards = misc:AddButton({"Get daily reward" , function ()
-  if a == "Dont used" then
-    a = "used"
-  game:GetService("ReplicatedStorage").Chest.Remotes.Functions.Reward:InvokeServer()
-  l:Notify("Success" , "" , 3)
-  else
-    l:Notify("Already used" , "" , 3)
-    return
-  end
-end})
 
+--sea 1 = 4520749081
+local stoptrader = false
+local whatugive = "None"
+local player2 = game.Players.LocalPlayer
+local whatothergiveforu = "None"
+local trader = Window:MakeTab({'Trader(BETA)' , 'Sword'})
+local sectiontrader = trader:AddSection({'Trader'})
+local paragraphshowfruit = trader:AddParagraph({"None"})
+local autoacceptt2rade = trader:AddToggle({
+  Name = "Start auto offer and accept" ,
+  Default = false,
+  Callback = function (Shownormtraifdorno)
+    while wait(2) do
+      if Shownormtraifdorno == true then
+        if whatugive == "Gas" then
+          whatugive = "GasFruit"
+       elseif whatugive == "Gold" then
+          whatugive = "GoldFruit"
+       elseif whatugive == "Magnet" then
+          whatugive = "MagnetFruit"
+       elseif whatugive == "Spirit" then
+          whatugive = "SpiritFruit"
+       elseif whatugive == "Quake" then
+          whatugive = "QuakeFruit"
+       elseif whatugive == "Snow" then
+          whatugive = "SnowFruit"
+       elseif whatugive == "Light" then
+          whatugive = "LightFruit"
+       elseif whatugive == "Ice" then
+          whatugive = "IceFruit"
+      elseif whatugive == "Magma" then
+          whatugive = "MagmaFruit"
+      elseif whatugive == "Flame" then
+          whatugive = "FlameFruit"
+      elseif whatugive == "Rumble" then
+          whatugive = "RumbleFruit"
+      elseif whatugive == "Gate" then
+          whatugive = "GateFruit"
+      elseif whatugive == "Dragon" then
+          whatugive = "DragonFruit"
+      elseif whatugive == "Toy" then
+          whatugive = "ToyFruit"
+      elseif whatugive == "Phoenix" then
+          whatugive = "PhoenixFruit"
+      elseif whatugive == "Dough" then
+          whatugive = "DoughFruit"
+      end
+      if whatothergiveforu == "Gas" then
+          whatothergiveforu = "GasFruit"
+       elseif whatothergiveforu == "Gold" then
+          whatothergiveforu = "GoldFruit"
+       elseif whatothergiveforu == "Magnet" then
+          whatothergiveforu = "MagnetFruit"
+       elseif whatothergiveforu == "Spirit" then
+          whatothergiveforu = "SpiritFruit"
+       elseif whatothergiveforu == "Quake" then
+          whatothergiveforu = "QuakeFruit"
+       elseif whatothergiveforu == "Snow" then
+          whatothergiveforu = "SnowFruit"
+       elseif whatothergiveforu == "Light" then
+          whatothergiveforu = "LightFruit"
+       elseif whatothergiveforu == "Ice" then
+          whatothergiveforu = "IceFruit"
+      elseif whatothergiveforu == "Magma" then
+          whatothergiveforu = "MagmaFruit"
+      elseif whatothergiveforu == "Flame" then
+          whatothergiveforu = "FlameFruit"
+      elseif whatothergiveforu == "Rumble" then
+          whatothergiveforu = "RumbleFruit"
+      elseif whatothergiveforu == "Gate" then
+          whatothergiveforu = "GateFruit"
+      elseif whatothergiveforu == "Dragon" then
+          whatothergiveforu = "DragonFruit"
+      elseif whatothergiveforu == "Toy" then
+          whatothergiveforu = "ToyFruit"
+      elseif whatothergiveforu == "Phoenix" then
+          whatothergiveforu = "PhoenixFruit"
+      elseif whatothergiveforu == "Dough" then
+          whatothergiveforu = "DoughFruit"
+      end
+      
+          for _, v  in pairs(player2.PlayerGui:GetDescendants()) do
+              if v.Name == "Player1_Offer" then
+                  for _, t in pairs(v:GetDescendants()) do
+                      if t.Name == whatugive then
+                          for _, checkfruit in pairs(player2.PlayerGui:GetDescendants()) do
+                              if checkfruit.Name == "Player2_Offfer" then
+                                  for _, l in pairs(checkfruit:GetDescendants()) do
+                                      if l.Name == whatothergiveforu then
+                                          game:GetService("ReplicatedStorage").Chest.Remotes.Functions.TradeFunction:InvokeServer("Ready")
+                                      end
+                                  end
+                              end
+                          end
+                      else
+                          game:GetService("ReplicatedStorage").Chest.Remotes.Functions.TradeFunction:InvokeServer("RemoveItem",{["ItemName"] = t})
+                          wait(0.5)
+                          game:GetService("ReplicatedStorage").Chest.Remotes.Functions.TradeFunction:InvokeServer("PutItem",{["ItemName"] = whatugive,["Amt"] = "1",["Add"] = true})
+                      end
+                  end
+              end
+          end
+      else
+
+      end
+    end
+end})
+local needoffer = trader:AddTextBox({
+  Name = "What You give",
+  PlaceholderText = "Type here",
+  Description = "Maybe Gas , Gold",
+  Callback = function (whatigive)
+    whatugive = whatigive
+  end
+})
+local whatothergive = trader:AddTextBox({
+  Name = "What other give",
+  Description = "Maybe Gas ,  Light",
+  PlaceholderText = "Type here",
+  Callback = function (whatothergive)
+    whatothergiveforu = whatothergive
+  end
+})
+
+local AiAuto = Window:MakeTab({"Auto Ai" , "banknote"}) 
+local sectionaiauto = AiAuto:AddSection({"Auto Ai"})
