@@ -311,8 +311,8 @@ local autoacceptt2rade = trader:AddToggle({
               end
           end
       else
-        whatothergiveforu = ""
-        whatugive = ""
+        whatothergiveforu = "None"
+        whatugive = "None"
       end
     end
 end})
@@ -333,4 +333,5 @@ local whatothergive = trader:AddTextBox({
   end
 })
 
-
+local AiAuto = Window:MakeTab({"Auto Ai" , "banknote"}) 
+local sectionaiauto = AiAuto:AddSection({"Auto Ai"})
