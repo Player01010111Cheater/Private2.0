@@ -218,7 +218,6 @@ local player2 = game.Players.LocalPlayer
 local whatothergiveforu = "None"
 local trader = Window:MakeTab({'Trader(BETA)' , 'Sword'})
 local sectiontrader = trader:AddSection({'Trader'})
-local paragraphshowfruit = trader:AddParagraph({"None"})
 local autoacceptt2rade = trader:AddToggle({
   Name = "Start auto offer and accept" ,
   Default = false,
@@ -324,7 +323,6 @@ local needoffer = trader:AddTextBox({
   Description = "Maybe Gas , Gold",
   Callback = function (whatigive)
     whatugive = whatigive
-    paragraphshowfruit:Set("You give: " .. whatugive .. "What other give: " .. whatothergiveforu)
   end
 })
 local whatothergive = trader:AddTextBox({
@@ -335,6 +333,3 @@ local whatothergive = trader:AddTextBox({
     whatothergiveforu = whatothergive
   end
 })
-
-local AiAuto = Window:MakeTab({"Auto Ai" , "banknote"}) 
-local sectionaiauto = AiAuto:AddSection({"Auto Ai"})
