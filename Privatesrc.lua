@@ -228,7 +228,7 @@ local autoacceptt2rade = trader:AddToggle({
           if invitetrad.Name == player.Name then
             
           else
-            game:GetService("ReplicatedStorage").Chest.Remotes.Functions.TradeRequester:InvokeServer("Invite",{["TargetName"] = invitetrad})
+            game:GetService("ReplicatedStorage").Chest.Remotes.Functions.TradeRequester:InvokeServer("Invite",{["TargetName"] = invitetrad.Name})
           end
         end
         if whatugive == "Gas" then
@@ -339,4 +339,5 @@ local whatothergive = trader:AddTextBox({
     whatothergiveforu = whatothergive
   end
 })
+
 
