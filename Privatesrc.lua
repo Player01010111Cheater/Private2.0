@@ -307,6 +307,17 @@ local autoacceptt2rade = trader:AddToggle({
                                   for _, l in pairs(checkfruit:GetDescendants()) do
                                       if l.Name == whatothergiveforu then
                                           game:GetService("ReplicatedStorage").Chest.Remotes.Functions.TradeFunction:InvokeServer("Ready")
+                                      else
+                                        wait(5)
+                                        if l.Name == whatothergiveforu then
+                                          game:GetService("ReplicatedStorage").Chest.Remotes.Functions.TradeFunction:InvokeServer("Ready")
+                                      else
+                                        for _, denytrade in pairs(game.Players:GetChildren()) do
+                                          if denytrade.Name == player.Name then
+                                            game:GetService("ReplicatedStorage").Chest.Remotes.Functions.TradeRequester:InvokeServer("Deny",{["TargetName"] = denytrade.Name})
+                                          end
+                                        end
+                                      end
                                       end
                                   end
                               end
@@ -339,5 +350,4 @@ local whatothergive = trader:AddTextBox({
     whatothergiveforu = whatothergive
   end
 })
-
 
