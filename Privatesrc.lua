@@ -224,6 +224,13 @@ local autoacceptt2rade = trader:AddToggle({
   Callback = function (Shownormtraifdorno)
     while wait(2) do
       if Shownormtraifdorno == true then
+        for _, invitetrad in pairs(game.Players:GetChildren()) do
+          if invitetrad.Name == player.Name then
+            
+          else
+            game:GetService("ReplicatedStorage").Chest.Remotes.Functions.TradeRequester:InvokeServer("Invite",{["TargetName"] = invitetrad})
+          end
+        end
         if whatugive == "Gas" then
           whatugive = "GasFruit"
        elseif whatugive == "Gold" then
@@ -333,5 +340,3 @@ local whatothergive = trader:AddTextBox({
   end
 })
 
-local AiAuto = Window:MakeTab({"Auto Ai" , "banknote"}) 
-local sectionaiauto = AiAuto:AddSection({"Auto Ai"})
